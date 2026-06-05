@@ -1,0 +1,15 @@
+{
+  "task": "ulcer_detection",
+  "manifest": "data\\ulcer\\splits\\dataset_manifest.csv",
+  "subset_ratios": [
+    0.1,
+    0.5
+  ],
+  "seeds": [
+    42
+  ],
+  "head_types": [
+    "linear"
+  ],
+  "n_runs": 2
+}

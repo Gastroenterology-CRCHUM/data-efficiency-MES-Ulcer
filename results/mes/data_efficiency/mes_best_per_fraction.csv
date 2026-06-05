@@ -1,0 +1,2 @@
+pct_data,model,auroc_mean,auroc_std,f1_mean,f1_std
+10,vits16_imagenet,0.612,,0.274,

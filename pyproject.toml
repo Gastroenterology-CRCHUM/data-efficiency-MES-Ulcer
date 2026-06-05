@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "data-efficiency-mes-ulcer"
+version = "0.1.0"
+description = "Data efficiency learning curves for gastrointestinal ulcer detection and MES scoring"
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "MIT" }
+
+dependencies = [
+    "torch>=2.0.1",
+    "torchvision>=0.15.2",
+    "timm>=0.9.0",
+    "transformers>=4.30.0",
+    "numpy>=1.24.4",
+    "pandas>=2.0.0",
+    "scikit-learn>=1.3.0",
+    "scikit-image>=0.20.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+    "scipy>=1.10.0",
+    "statsmodels>=0.14.0",
+    "opencv-python-headless>=4.8.0",
+    "tqdm>=4.65.0",
+    "PyYAML>=6.0",
+    "ipykernel>=6.25.0",
+    "ipywidgets>=8.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "ruff>=0.4.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*", "scripts*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = ["--tb=short", "-q"]
+filterwarnings = ["ignore::DeprecationWarning", "ignore::UserWarning"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+src = ["src", "scripts", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "UP", "B", "SIM"]
+ignore = [
+    "E501",   # line too long
+    "B008",   # function call in default arg
+    "B905",   # zip() strict=
+    "SIM115", # context manager patterns
+    "UP007",  # X | Y syntax
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["src", "scripts"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"

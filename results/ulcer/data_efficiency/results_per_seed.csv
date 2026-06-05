@@ -1,0 +1,3 @@
+model,freeze,head_type,subset_ratio,pct_data,seed,n_train,f1,auroc,tuned_threshold,tuned_sensitivity,tuned_specificity,tuned_f1,clip_f1,clip_auroc,checkpoint_dir
+efficientnetb0,finetune,linear,0.1,10,42,290,0.412,0.671,0.37,1.0,0.040955631399317405,0.3520368946963874,0.5517241379310345,0.7013888888888888,output\ulcer\models\efficientnetb0\0\linear\20260605_162411
+vits16_imagenet,finetune,linear,0.1,10,42,290,0.122,0.584,0.1,0.6026200873362445,0.5073947667804323,0.345,0.0,0.5104166666666666,output\ulcer\models\vits16_imagenet\0\linear\20260605_162602

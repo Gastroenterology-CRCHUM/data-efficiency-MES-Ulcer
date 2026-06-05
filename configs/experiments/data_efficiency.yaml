@@ -1,0 +1,72 @@
+subset_ratios: [0.10, 0.25, 0.50, 0.75, 1.00]
+# subset_ratios: [1.00]
+# head_types: ["linear", "mlp1", "mlp2"]
+head_types: ["linear"]
+seeds: [42, 84, 128, 256, 364, 420]
+# seeds: [42, 84, 128]
+
+# Multiplicateur appliqué au lr de chaque run selon le head_type.
+# mlp1/mlp2 ont plus de paramètres → LR plus bas pour éviter l'overfit de la tête.
+head_lr_scales:
+  linear: 1.0
+  mlp1: 1.0
+  mlp2: 1.0
+
+runs:
+  # ── ImageNet baselines ────────────────────────────────────────────
+  #  - model: efficientnetb0
+  #    freeze_layers: -1
+  #    learning_rate: 1.0e-4
+
+  - model: efficientnetb0
+    freeze_layers: 0
+    learning_rate: 3.0e-5
+
+  #  - model: vits16_imagenet
+  #    freeze_layers: -1
+  #    learning_rate: 1.0e-4
+
+  - model: vits16_imagenet
+    freeze_layers: 0
+    learning_rate: 1.0e-6
+
+  #  - model: resnet50_imagenet
+  #    freeze_layers: -1
+  #    learning_rate: 1.0e-4
+
+  - model: resnet50_imagenet
+    freeze_layers: 0
+    learning_rate: 1.0e-5
+
+  # ── GastroNet ─────────────────────────────────────────────────────
+  #  - model: vits16_gastronet
+  #    freeze_layers: -1
+  #    learning_rate: 1.0e-4
+
+  - model: vits16_gastronet
+    freeze_layers: 0
+    learning_rate: 1.0e-6
+
+  #  - model: resnet50_200K
+  #    freeze_layers: -1
+  #    learning_rate: 1.0e-4
+
+  - model: resnet50_200K
+    freeze_layers: 0
+    learning_rate: 1.0e-6
+
+  #  - model: resnet50_1M
+  #    freeze_layers: -1
+  #    learning_rate: 1.0e-4
+
+  - model: resnet50_1M
+    freeze_layers: 0
+    learning_rate: 1.0e-6
+
+  #  - model: resnet50_5M
+  #    freeze_layers: -1
+  #    learning_rate: 1.0e-4
+
+  - model: resnet50_5M
+    freeze_layers: 0
+    learning_rate: 1.0e-6

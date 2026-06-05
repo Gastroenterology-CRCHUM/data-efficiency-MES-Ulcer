@@ -1,0 +1,17 @@
+{
+  "task": "mes_multiclass",
+  "manifest": "data\\mes\\splits\\dataset_manifest.csv",
+  "data_dir": "data\\mes\\processed",
+  "num_classes": 4,
+  "subset_ratios": [
+    0.1,
+    0.5
+  ],
+  "seeds": [
+    42
+  ],
+  "head_types": [
+    "linear"
+  ],
+  "n_runs": 2
+}

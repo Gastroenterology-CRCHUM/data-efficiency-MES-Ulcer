@@ -1,0 +1,52 @@
+# Reference config — all available fields with their defaults.
+# Pass to scripts via load_config("configs/example.yaml")
+# Or override individual fields on the command line.
+
+model:
+  model: vits16_imagenet # key in MODEL_REGISTRY
+  num_classes: 1         # 1 = binary (BCE), 2+ = multiclass (CrossEntropy)
+  freeze_layers: -1      # -1 = freeze backbone; 0 = full fine-tune; N = freeze first N blocks
+  threshold: 0.5         # binary decision threshold (ignored for multiclass)
+  dropout_rate: 0.5      # dropout before classification head
+  head_type: linear      # linear | mlp1 | mlp2
+
+training:
+  subset_ratio: 1.0        # fraction of training data to use (0, 1]
+  random_seed: 42          # reproducibility seed
+
+  batch_size: 64
+  epochs: 100
+  learning_rate: 5.0e-5
+  optimizer: AdamW         # Adam | AdamW
+  weight_decay: 1.0e-2
+  label_smoothing: 0.0     # >0 helps multiclass; keep 0 for binary
+
+  class_weights: null      # null = auto-compute; float = positive-class weight (binary); list = per-class
+
+  dropout_rate: 0.5
+  lr_patience: 10          # ReduceLROnPlateau patience (unused with cosine schedule)
+  lr_factor: 0.5           # LR reduction factor (unused with cosine schedule)
+  es_patience: 20          # early-stopping patience (epochs without AUROC improvement)
+
+  warmup_epochs: 5         # linear warmup before cosine annealing
+  min_lr: 1.0e-7           # minimum LR at end of cosine schedule
+
+  equalize: true           # apply CLAHE histogram equalisation
+
+  aggregate_by_clip: true  # clip-level aggregation at test time (binary only)
+  run_train: true
+  run_test: true
+  run_threshold_tuning: false  # sweep val set once after training (binary only)
+
+  use_randaugment: false
+  randaugment_m: 9           # magnitude 0–30 (9 = medium)
+  use_random_erasing: false
+  random_erasing_p: 0.25
+
+  num_workers: 8
+  device_id: 0             # GPU id (set < 0 for CPU)
+  use_amp: true            # mixed-precision training
+
+evaluation:
+  bootstrap_samples: 10000
+  confidence_interval: 95
