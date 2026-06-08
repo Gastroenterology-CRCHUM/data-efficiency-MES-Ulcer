@@ -91,7 +91,7 @@ def patient_level_split(
     for label in sorted(all_classes, key=lambda c: len(class_patients[c])):
         unassigned = sorted(p for p in class_patients[label] if p not in patient_to_split)
 
-        def count_in(split: str) -> int:
+        def count_in(split: str, label: int) -> int:
             return sum(1 for p in class_patients[label] if patient_to_split.get(p) == split)
 
         rng = random.Random(seed ^ (label * 0x9E3779B9))
@@ -100,7 +100,7 @@ def patient_level_split(
 
         # Priority: test → train → val
         for target in ("test", "train", "val"):
-            if count_in(target) == 0 and idx < len(unassigned):
+            if count_in(target, label) == 0 and idx < len(unassigned):
                 patient_to_split[unassigned[idx]] = target
                 idx += 1
 

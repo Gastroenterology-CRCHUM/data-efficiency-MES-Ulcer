@@ -32,7 +32,8 @@ import numpy as np
 import pandas as pd
 import torch
 import yaml
-from sklearn.metrics import confusion_matrix as _sklearn_cm, f1_score as _sklearn_f1
+from sklearn.metrics import confusion_matrix as _sklearn_cm
+from sklearn.metrics import f1_score as _sklearn_f1
 
 from src.config import MODEL_REGISTRY, Config, get_img_size, legacy_dict_to_config, load_config
 from src.data.dataloader import get_split_loaders, get_test_loader, get_val_loader
@@ -261,7 +262,6 @@ def _run_one(
 
 def _parallel_worker(job: dict) -> dict | None:
     """Execute one training run in a subprocess. Called by ProcessPoolExecutor."""
-    import os
     from pathlib import Path
 
     import torch

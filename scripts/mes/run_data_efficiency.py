@@ -33,7 +33,11 @@ import torch
 import yaml
 from sklearn.metrics import (
     confusion_matrix as _sklearn_cm,
+)
+from sklearn.metrics import (
     f1_score as _sklearn_f1,
+)
+from sklearn.metrics import (
     roc_auc_score,
     roc_curve,
 )
@@ -303,7 +307,6 @@ def _run_one(
 
 def _parallel_worker(job: dict) -> dict | None:
     """Execute one MES training run in a subprocess."""
-    import os
     from pathlib import Path
 
     import torch

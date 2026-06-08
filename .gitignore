@@ -24,8 +24,10 @@ data/assets/pretrained/
 output/
 
 # Results (generated, but you may want to commit CSVs only)
-results/*/figures/
-results/*/predictions/
+results/**/figures/
+results/**/predictions/
+results/**/*.npy
+results/**/*.png
 
 # Logs
 logs/

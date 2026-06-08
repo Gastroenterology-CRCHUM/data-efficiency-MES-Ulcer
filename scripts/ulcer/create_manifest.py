@@ -29,7 +29,6 @@ from __future__ import annotations
 
 import argparse
 import csv
-import random
 from pathlib import Path
 
 from src.data.manifest_utils import collect_frames, patient_level_split, print_split_stats
