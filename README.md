@@ -72,21 +72,21 @@ pip install -e .
 data-efficiency-MES-Ulcer/
 │
 ├── src/                         # Core library
-│   ├── config/                  # Configuration dataclasses and loader
-│   ├── data/                    # Dataset, DataLoader, transforms, sampling
-│   ├── models/                  # ClassifierModel (shared backbone)
-│   ├── evaluation/              # Metrics, plots, DeLong test
+│   ├── config/                  # Configuration dataclasses, loader, validation
+│   ├── data/                    # Dataset, DataLoader, transforms, manifest utilities
+│   ├── models/                  # ClassifierModel (registry-driven backbone + head)
+│   ├── evaluation/              # Metrics, bootstrap CI, plots, DeLong test, threshold sweep
 │   ├── utils/                   # Logging, device helpers
-│   └── visualization/           # GradCAM explainability
+│   └── visualization/           # GradCAM (CNN) and CLS attention map (ViT) explainability
 │
 ├── scripts/
+│   ├── run_all.py                   # Run ulcer then MES experiments sequentially
 │   ├── ulcer/
-│   │   ├── create_manifest.py       # Generate train/val/test splits
+│   │   ├── create_manifest.py       # Generate ulcer train/val/test splits
 │   │   └── run_data_efficiency.py   # Ulcer detection learning curves
-│   ├── mes/
-│   │   ├── create_manifest.py       # Generate train/val/test splits
-│   │   └── run_data_efficiency.py   # MES scoring learning curves
-│   └── _manifest_utils.py           # Shared manifest utilities
+│   └── mes/
+│       ├── create_manifest.py       # Generate MES train/val/test splits
+│       └── run_data_efficiency.py   # MES scoring learning curves
 │
 ├── configs/
 │   ├── example.yaml                 # Reference config (all fields + defaults)
@@ -98,7 +98,7 @@ data-efficiency-MES-Ulcer/
 │   ├── 02_training_monitoring.ipynb # Training curves (loss, AUROC per epoch)
 │   ├── 03_learning_curves.ipynb     # Data efficiency learning curves
 │   ├── 04_results_analysis.ipynb    # Statistical comparison, DeLong test
-│   └── 05_explainability.ipynb      # GradCAM heatmaps (ResNet/EfficientNet/ViT)
+│   └── 05_explainability.ipynb      # GradCAM (CNN) / attention maps (ViT) — correct preds & misclassifications
 │
 ├── data/                        # YOU PROVIDE THIS (see Data Structure below)
 ├── output/                      # Model checkpoints (auto-created)
@@ -208,20 +208,28 @@ python -m scripts.ulcer.run_data_efficiency --subset-ratios 0.1 0.5 --seeds 42 -
 python -m scripts.mes.run_data_efficiency   --subset-ratios 0.1 0.5 --seeds 42 --max-runs 2 --epochs 5
 ```
 
-### 4. Full experiment from plan file
+### 4. Run both tasks sequentially
+
+```bash
+# Forwards all CLI flags to both ulcer and MES experiments in order
+python -m scripts.run_all --plan configs/experiments/data_efficiency.yaml
+python -m scripts.run_all --subset-ratios 0.1 0.5 1.0 --seeds 42 84 --epochs 50
+```
+
+### 5. Full experiment from plan file (single task)
 
 ```bash
 python -m scripts.ulcer.run_data_efficiency --plan configs/experiments/data_efficiency.yaml
 python -m scripts.mes.run_data_efficiency   --plan configs/experiments/data_efficiency.yaml
 ```
 
-### 5. Single model, custom fractions
+### 7. Single model, custom fractions
 
 ```bash
 python -m scripts.ulcer.run_data_efficiency --model vits16_imagenet --subset-ratios 0.25 0.5 1.0 --seeds 42 84 128
 ```
 
-### 6. Parallel execution
+### 8. Parallel execution
 
 ```bash
 python -m scripts.ulcer.run_data_efficiency --num-workers 2 --batch-size 32
@@ -377,4 +385,4 @@ jupyter lab notebooks/
 | `02_training_monitoring.ipynb` | Loss and AUROC curves per epoch |
 | `03_learning_curves.ipynb` | AUROC and F1 vs training fraction per model |
 | `04_results_analysis.ipynb` | Model ranking, DeLong test, per-class sensitivity |
-| `05_explainability.ipynb` | GradCAM heatmaps — correct predictions and misclassifications |
+| `05_explainability.ipynb` | GradCAM (CNN) and CLS attention maps (ViT) — correct predictions and misclassifications.  Auto-selects the most recent checkpoint for `TASK` / `MODEL`. |
