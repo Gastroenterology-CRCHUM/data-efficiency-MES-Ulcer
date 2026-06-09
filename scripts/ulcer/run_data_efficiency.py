@@ -37,7 +37,7 @@ from sklearn.metrics import f1_score as _sklearn_f1
 
 from src.config import MODEL_REGISTRY, Config, get_img_size, legacy_dict_to_config, load_config
 from src.data.dataloader import get_split_loaders, get_test_loader, get_val_loader
-from src.evaluation.plots import plot_learning_curves, plot_roc_curve
+from src.evaluation.plots import plot_confusion_matrix, plot_learning_curves, plot_roc_curve
 from src.evaluation.threshold import collect_probabilities, find_best_threshold, sweep_thresholds
 from src.models.classifier import ClassifierModel, _TrainingInterrupted
 from src.utils import get_device, loader_dataset_size
@@ -221,6 +221,14 @@ def _run_one(
     import matplotlib.pyplot as plt
 
     plt.close(roc_fig)
+
+    cm_fig = plot_confusion_matrix(
+        _cm,
+        threshold=tuned_threshold,
+        title=f"Confusion matrix — Ulcer ({run_name})",
+    )
+    cm_fig.savefig(figs_dir / f"cm_{run_name}.png", dpi=150, bbox_inches="tight")
+    plt.close(cm_fig)
 
     # ── Save predictions ──────────────────────────────────────────────────
     preds_dir = results_dir / "predictions" / run_name

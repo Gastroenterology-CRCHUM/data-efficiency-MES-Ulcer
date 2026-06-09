@@ -330,7 +330,8 @@ results/
 │   ├── figures/
 │   │   ├── learning_curve_f1.png
 │   │   ├── learning_curve_auroc.png
-│   │   └── roc_<run_name>.png
+│   │   ├── roc_<run_name>.png
+│   │   └── cm_<run_name>.png     # confusion matrix at tuned threshold
 │   └── predictions/
 │       └── <run_name>/
 │           ├── test_labels.npy
