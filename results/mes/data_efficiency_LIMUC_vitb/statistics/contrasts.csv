@@ -1,0 +1,4 @@
+dataset,family,challenger,baseline,AUROC challenger,AUROC baseline,ΔAUROC,ci_lo,ci_hi,p_sup,p_sup_adj,verdict,endpoint,n_patients,n_seeds,n_boot_valid
+limuc_vitb,vitb_matched,vitb14_gastronet_100pct,vitb14_dinov2_100pct,0.980643,0.985858,-0.00521477,-0.0102491,-0.000997663,0.0135986,0.0135986,worse,active,85,10,10000
+limuc_vitb,vitb_generic,vitb16_dinov3_100pct,vitb14_gastronet_100pct,0.984666,0.980643,0.00402369,-0.00056861,0.00927427,0.0907909,0.181582,inconclusive,active,85,10,10000
+limuc_vitb,vitb_generic,vitb16_dinov3_100pct,vitb14_dinov2_100pct,0.984666,0.985858,-0.00119108,-0.00380014,0.00100763,0.290971,0.290971,inconclusive,active,85,10,10000

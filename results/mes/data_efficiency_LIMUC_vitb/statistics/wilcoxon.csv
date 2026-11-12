@@ -1,0 +1,7 @@
+challenger,baseline,measure,mean Δ,median Δ,n_pos,n_seeds,p_exact,p_floor,p_adj,dataset,family
+vitb14_gastronet,vitb14_dinov2,ΔAULC,0.00137755,0.00139484,7,10,0.322266,0.00195312,0.322266,limuc_vitb,vitb_matched
+vitb14_gastronet_100pct,vitb14_dinov2_100pct,ΔAUROC,-0.00521477,-0.00510118,0,10,0.00195312,0.00195312,0.00195312,limuc_vitb,vitb_matched
+vitb16_dinov3,vitb14_gastronet,ΔAULC,-0.0136236,-0.012365,0,10,0.00195312,0.00195312,0.00390625,limuc_vitb,vitb_generic
+vitb16_dinov3,vitb14_dinov2,ΔAULC,-0.0122461,-0.0124993,0,10,0.00195312,0.00195312,0.00390625,limuc_vitb,vitb_generic
+vitb16_dinov3_100pct,vitb14_gastronet_100pct,ΔAUROC,0.00402369,0.00425451,10,10,0.00195312,0.00195312,0.00390625,limuc_vitb,vitb_generic
+vitb16_dinov3_100pct,vitb14_dinov2_100pct,ΔAUROC,-0.00119108,-0.00135708,2,10,0.00976562,0.00195312,0.00976562,limuc_vitb,vitb_generic

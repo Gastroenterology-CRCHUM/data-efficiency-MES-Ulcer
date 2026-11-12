@@ -1,0 +1,19 @@
+dataset,family,measure,challenger,baseline,Δ all patients,min without one,max without one,n_patients_left_out,sign_stable
+limuc_to_internal,matched,ΔAULC,resnet50_5M,resnet50_imagenet,-0.00072268,-0.00585309,0.027279,34,False
+limuc_to_internal,matched,ΔAULC,vits16_gastronet,vits16_imagenet,0.0303257,0.00960632,0.0361462,34,True
+limuc_to_internal,matched,ΔAUROC,resnet50_5M_100pct,resnet50_imagenet_100pct,-0.00782979,-0.0132201,0.0295287,34,False
+limuc_to_internal,matched,ΔAUROC,vits16_gastronet_100pct,vits16_imagenet_100pct,0.0412442,0.0161136,0.0496456,34,True
+limuc_to_internal,corpus_size,ΔAULC,resnet50_1M,resnet50_200K,-0.00701196,-0.0203795,0.00411861,34,False
+limuc_to_internal,corpus_size,ΔAULC,resnet50_5M,resnet50_1M,-0.0247217,-0.033279,0.0230558,34,False
+limuc_to_internal,corpus_size,ΔAULC,resnet50_5M,resnet50_200K,-0.0317337,-0.0482573,0.0143313,34,False
+limuc_to_internal,corpus_size,ΔAUROC,resnet50_1M_100pct,resnet50_200K_100pct,0.00579621,-0.00251251,0.0149507,34,False
+limuc_to_internal,corpus_size,ΔAUROC,resnet50_5M_100pct,resnet50_1M_100pct,-0.0291492,-0.037318,0.0162419,34,False
+limuc_to_internal,corpus_size,ΔAUROC,resnet50_5M_100pct,resnet50_200K_100pct,-0.023353,-0.0352003,0.0251215,34,False
+limuc_to_internal,generic,ΔAULC,vits14_dinov2,vits16_gastronet,-0.0158769,-0.0199747,0.00204977,34,False
+limuc_to_internal,generic,ΔAULC,vits14_dinov2,vits16_imagenet,0.0144488,0.0116561,0.0206009,34,True
+limuc_to_internal,generic,ΔAULC,vits16_dinov3,vits16_gastronet,-0.0196973,-0.0250904,-0.00822526,34,True
+limuc_to_internal,generic,ΔAULC,vits16_dinov3,vits16_imagenet,0.0106284,0.00138106,0.0132018,34,True
+limuc_to_internal,generic,ΔAUROC,vits14_dinov2_100pct,vits16_gastronet_100pct,-0.0321163,-0.0368449,-0.0179989,34,True
+limuc_to_internal,generic,ΔAUROC,vits14_dinov2_100pct,vits16_imagenet_100pct,0.0091279,-0.00188524,0.0203662,34,False
+limuc_to_internal,generic,ΔAUROC,vits16_dinov3_100pct,vits16_gastronet_100pct,-0.0300595,-0.0336858,-0.012031,34,True
+limuc_to_internal,generic,ΔAUROC,vits16_dinov3_100pct,vits16_imagenet_100pct,0.0111847,0.00408269,0.0186917,34,True

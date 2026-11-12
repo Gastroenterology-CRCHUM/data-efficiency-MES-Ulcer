@@ -1,0 +1,9 @@
+dataset,architecture,reference,reference_auroc,model,fraction_needed [95% CI],fraction_eq,label_saving,interval_spans_range,aulc,aulc_lo,aulc_hi,estimator
+internal_to_limuc,ResNet-50,resnet50_imagenet_100pct,0.887017,resnet50_imagenet,reference,1,1,False,0.854457,0.812698,0.891362,"per-seed interpolation, median over seeds"
+internal_to_limuc,ResNet-50,resnet50_imagenet_100pct,0.887017,resnet50_5M,"<10% [<10%, 33%]",,,False,0.905328,0.869315,0.936119,"per-seed interpolation, median over seeds"
+internal_to_limuc,ResNet-50,resnet50_imagenet_100pct,0.887017,resnet50_1M,"<10% [<10%, 34%]",,,False,0.910273,0.874236,0.941261,"per-seed interpolation, median over seeds"
+internal_to_limuc,ResNet-50,resnet50_imagenet_100pct,0.887017,resnet50_200K,"<10% [<10%, 34%]",,,False,0.909338,0.876763,0.936937,"per-seed interpolation, median over seeds"
+internal_to_limuc,ViT-S,vits16_imagenet_100pct,0.894383,vits16_imagenet,reference,1,1,False,0.87719,0.839535,0.909595,"per-seed interpolation, median over seeds"
+internal_to_limuc,ViT-S,vits16_imagenet_100pct,0.894383,vits16_gastronet,"<10% [<10%, <10%]",,,False,0.918345,0.886926,0.944991,"per-seed interpolation, median over seeds"
+internal_to_limuc,ViT-S,vits16_imagenet_100pct,0.894383,vits14_dinov2,"<10% [<10%, 43%]",,,False,0.893613,0.856347,0.924541,"per-seed interpolation, median over seeds"
+internal_to_limuc,ViT-S,vits16_imagenet_100pct,0.894383,vits16_dinov3,"<10% [<10%, 22%]",,,False,0.909621,0.871536,0.940427,"per-seed interpolation, median over seeds"

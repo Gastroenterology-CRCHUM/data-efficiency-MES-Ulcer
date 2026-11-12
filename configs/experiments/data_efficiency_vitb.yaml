@@ -1,0 +1,13 @@
+# Exploratory ViT-Base plan (run_all.py --vitb / --vitb-only), ulcer and MES, in their own folders
+# (results/<task>/data_efficiency_vitb). Same fractions, seeds and training defaults as
+# data_efficiency.yaml; these models train at 336 px (registry).
+
+subset_ratios: [0.10, 0.25, 0.50, 0.75, 1.00]
+head_types: ["linear"]
+seeds: [42, 84, 128, 256, 364, 420, 512, 1024, 2048, 4096]
+
+models:
+  # DINOv2 GastroNet-5M vs LVD-142M (ViT-B/14, 4 registers), generic DINOv3
+  - model: vitb14_gastronet
+  - model: vitb14_dinov2
+  - model: vitb16_dinov3

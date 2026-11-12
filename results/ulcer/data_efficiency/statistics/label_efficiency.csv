@@ -1,0 +1,9 @@
+dataset,architecture,reference,reference_auroc,model,fraction_needed [95% CI],fraction_eq,label_saving,interval_spans_range,aulc,aulc_lo,aulc_hi,estimator
+ulcer,ResNet-50,resnet50_imagenet_100pct,0.79379,resnet50_imagenet,reference,1,1,False,0.765064,0.64952,0.862211,"per-seed interpolation, median over seeds"
+ulcer,ResNet-50,resnet50_imagenet_100pct,0.79379,resnet50_5M,"<10% [<10%, 12%]",,,False,0.899356,0.817427,0.957637,"per-seed interpolation, median over seeds"
+ulcer,ResNet-50,resnet50_imagenet_100pct,0.79379,resnet50_1M,"<10% [<10%, 13%]",,,False,0.897836,0.815363,0.957756,"per-seed interpolation, median over seeds"
+ulcer,ResNet-50,resnet50_imagenet_100pct,0.79379,resnet50_200K,"<10% [<10%, 14%]",,,False,0.883158,0.793288,0.949465,"per-seed interpolation, median over seeds"
+ulcer,ViT-S,vits16_imagenet_100pct,0.89312,vits16_imagenet,reference,1,1,False,0.838628,0.736942,0.914535,"per-seed interpolation, median over seeds"
+ulcer,ViT-S,vits16_imagenet_100pct,0.89312,vits16_gastronet,"21% [<10%, 42%]",0.212837,4.69843,False,0.907047,0.8387,0.955747,"per-seed interpolation, median over seeds"
+ulcer,ViT-S,vits16_imagenet_100pct,0.89312,vits14_dinov2,"39% [<10%, 61%]",0.393562,2.5409,False,0.880829,0.794659,0.94279,"per-seed interpolation, median over seeds"
+ulcer,ViT-S,vits16_imagenet_100pct,0.89312,vits16_dinov3,"68% [23%, >100%]",0.67819,1.47451,False,0.846524,0.756875,0.916399,"per-seed interpolation, median over seeds"

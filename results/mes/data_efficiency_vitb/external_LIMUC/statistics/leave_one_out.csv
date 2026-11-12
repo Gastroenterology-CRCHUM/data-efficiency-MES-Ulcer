@@ -1,0 +1,7 @@
+dataset,family,measure,challenger,baseline,Δ all patients,min without one,max without one,n_patients_left_out,sign_stable
+internal_to_limuc_vitb,vitb_matched,ΔAULC,vitb14_gastronet,vitb14_dinov2,0.0282602,0.0225293,0.032203,85,True
+internal_to_limuc_vitb,vitb_matched,ΔAUROC,vitb14_gastronet_100pct,vitb14_dinov2_100pct,0.0450335,0.0408733,0.0511459,85,True
+internal_to_limuc_vitb,vitb_generic,ΔAULC,vitb16_dinov3,vitb14_gastronet,-0.0378251,-0.0417458,-0.033627,85,True
+internal_to_limuc_vitb,vitb_generic,ΔAULC,vitb16_dinov3,vitb14_dinov2,-0.00956495,-0.0110977,-0.00756496,85,True
+internal_to_limuc_vitb,vitb_generic,ΔAUROC,vitb16_dinov3_100pct,vitb14_gastronet_100pct,-0.0826134,-0.0904124,-0.076762,85,True
+internal_to_limuc_vitb,vitb_generic,ΔAUROC,vitb16_dinov3_100pct,vitb14_dinov2_100pct,-0.03758,-0.0410962,-0.0335687,85,True

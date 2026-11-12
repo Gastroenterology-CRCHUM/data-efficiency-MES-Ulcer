@@ -1,0 +1,48 @@
+{
+  "task": "mes_multiclass",
+  "direction": "internal_to_limuc",
+  "source": "internal",
+  "target": "LIMUC",
+  "target_split": "test",
+  "created": "2026-11-03T12:17:04",
+  "git_sha": "d305a8b571b34aedef1871d9d3f601309c3d78fd-dirty",
+  "source_results": "results/mes/data_efficiency/results_per_seed.csv",
+  "target_manifest": "data_LIMUC/mes/splits/dataset_manifest.csv",
+  "target_data_dir": "data_LIMUC/mes/processed",
+  "target_test": {
+    "n_frames": 1522,
+    "n_clips": 1522,
+    "n_patients": 85,
+    "frames_per_grade": {
+      "0": 854,
+      "1": 406,
+      "2": 163,
+      "3": 99
+    }
+  },
+  "n_runs": 450,
+  "checks": {
+    "target_labels": "match",
+    "reproduction": {
+      "run_name": "resnet50_imagenet_finetune_linear_10pct_seed42",
+      "max_abs_diff": 5.551115123125783e-17
+    }
+  },
+  "versions": {
+    "python": "3.10.20",
+    "torch": "2.14.0+cu132",
+    "cuda": "13.2",
+    "cudnn": 92400,
+    "torchvision": "0.29.0+cu132",
+    "timm": "1.0.29",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "sklearn": "1.7.2"
+  },
+  "device": "NVIDIA RTX PRO 5000 Blackwell",
+  "metrics": {
+    "f1, auroc, clip_*, clin_*, qwk, sens / spec": "as in the source results, on the target test split",
+    "val_auroc": "source validation AUROC (checkpoint criterion); the training columns are the source run's",
+    "estimates": "point estimates on the full target test set; CIs are not stored here"
+  }
+}

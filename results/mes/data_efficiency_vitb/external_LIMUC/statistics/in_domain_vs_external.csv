@@ -1,0 +1,4 @@
+dataset,test_split,model,AUROC in-domain,in_domain_lo,in_domain_hi,AUROC external,external_lo,external_hi,ΔAUROC,ci_lo,ci_hi,endpoint,n_patients,n_seeds,n_boot_valid
+internal_to_limuc_vitb,limuc_vitb,vitb14_dinov2,0.985858,0.976419,0.993206,0.897163,0.855104,0.931829,-0.0886947,-0.125584,-0.0587818,active,85,10,10000
+internal_to_limuc_vitb,limuc_vitb,vitb14_gastronet,0.980643,0.96769,0.990842,0.942196,0.91486,0.965758,-0.0384465,-0.0575599,-0.0219498,active,85,10,10000
+internal_to_limuc_vitb,limuc_vitb,vitb16_dinov3,0.984666,0.974546,0.992367,0.859583,0.806096,0.905588,-0.125084,-0.175117,-0.0832412,active,85,10,10000

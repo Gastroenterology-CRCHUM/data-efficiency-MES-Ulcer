@@ -1,0 +1,7 @@
+dataset,family,measure,challenger,baseline,Δ all patients,min without one,max without one,n_patients_left_out,sign_stable
+ulcer_vitb,vitb_matched,ΔAULC,vitb14_gastronet,vitb14_dinov2,0.0521599,0.0365151,0.0606551,19,True
+ulcer_vitb,vitb_matched,ΔAUROC,vitb14_gastronet_100pct,vitb14_dinov2_100pct,0.0288807,0.0150296,0.0353458,19,True
+ulcer_vitb,vitb_generic,ΔAULC,vitb16_dinov3,vitb14_gastronet,-0.0863523,-0.100644,-0.0711184,19,True
+ulcer_vitb,vitb_generic,ΔAULC,vitb16_dinov3,vitb14_dinov2,-0.0341923,-0.0402724,-0.0277685,19,True
+ulcer_vitb,vitb_generic,ΔAUROC,vitb16_dinov3_100pct,vitb14_gastronet_100pct,-0.0817147,-0.101442,-0.0642481,19,True
+ulcer_vitb,vitb_generic,ΔAUROC,vitb16_dinov3_100pct,vitb14_dinov2_100pct,-0.0528341,-0.0677147,-0.0401941,19,True

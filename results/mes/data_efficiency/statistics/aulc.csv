@@ -1,0 +1,10 @@
+dataset,family,challenger,baseline,AULC challenger,AULC baseline,ΔAULC,ci_lo,ci_hi,p_sup,p_sup_adj,verdict,endpoint,n_patients,n_seeds,n_boot_valid
+mes,matched,resnet50_5M,resnet50_imagenet,0.755796,0.732871,0.0229253,-0.0235696,0.0679747,0.29997,0.29997,inconclusive,active,34,10,10000
+mes,matched,vits16_gastronet,vits16_imagenet,0.762762,0.738443,0.0243195,-0.000250267,0.0477019,0.0517948,0.10359,inconclusive,active,34,10,10000
+mes,corpus_size,resnet50_1M,resnet50_200K,0.74751,0.727382,0.0201285,-0.00352514,0.0462696,0.0969903,0.19618,inconclusive,active,34,10,10000
+mes,corpus_size,resnet50_5M,resnet50_1M,0.755796,0.74751,0.00828628,-0.0166136,0.0309319,0.39776,0.39776,inconclusive,active,34,10,10000
+mes,corpus_size,resnet50_5M,resnet50_200K,0.755796,0.727382,0.0284147,-0.00159419,0.0638725,0.0653935,0.19618,inconclusive,active,34,10,10000
+mes,generic,vits14_dinov2,vits16_gastronet,0.763976,0.762762,0.00121371,-0.0219087,0.0271118,0.973903,1,inconclusive,active,34,10,10000
+mes,generic,vits14_dinov2,vits16_imagenet,0.763976,0.738443,0.0255332,0.00937577,0.0421989,0.00379962,0.0151985,better,active,34,10,10000
+mes,generic,vits16_dinov3,vits16_gastronet,0.770217,0.762762,0.00745498,-0.0180625,0.0354095,0.550945,1,inconclusive,active,34,10,10000
+mes,generic,vits16_dinov3,vits16_imagenet,0.770217,0.738443,0.0317745,0.00968409,0.0532238,0.00839916,0.0251975,better,active,34,10,10000

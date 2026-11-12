@@ -1,0 +1,10 @@
+dataset,family,challenger,baseline,AUROC challenger,AUROC baseline,ΔAUROC,ci_lo,ci_hi,p_sup,p_sup_adj,verdict,endpoint,n_patients,n_seeds,n_boot_valid
+ulcer,matched,resnet50_5M_100pct,resnet50_imagenet_100pct,0.928084,0.793526,0.134558,0.0573072,0.22439,0.00019998,0.00039996,better,binary,19,10,10000
+ulcer,matched,vits16_gastronet_100pct,vits16_imagenet_100pct,0.955431,0.89215,0.0632813,0.0143572,0.126665,0.0089991,0.0089991,better,binary,19,10,10000
+ulcer,corpus_size,resnet50_1M_100pct,resnet50_200K_100pct,0.935892,0.914743,0.021149,0.00103583,0.0484515,0.0373963,0.112189,inconclusive,binary,19,10,10000
+ulcer,corpus_size,resnet50_5M_100pct,resnet50_1M_100pct,0.928084,0.935892,-0.00780868,-0.0352798,0.0153667,0.49695,0.49695,inconclusive,binary,19,10,10000
+ulcer,corpus_size,resnet50_5M_100pct,resnet50_200K_100pct,0.928084,0.914743,0.0133403,-0.00990785,0.0360689,0.227377,0.454755,inconclusive,binary,19,10,10000
+ulcer,generic,vits14_dinov2_100pct,vits16_gastronet_100pct,0.927704,0.955431,-0.0277266,-0.0773681,0.0138715,0.219978,0.439956,inconclusive,binary,19,10,10000
+ulcer,generic,vits14_dinov2_100pct,vits16_imagenet_100pct,0.927704,0.89215,0.0355547,0.0119751,0.074441,0.00079992,0.00319968,better,binary,19,10,10000
+ulcer,generic,vits16_dinov3_100pct,vits16_gastronet_100pct,0.904349,0.955431,-0.0510824,-0.101843,-0.0119099,0.00759924,0.0227977,worse,binary,19,10,10000
+ulcer,generic,vits16_dinov3_100pct,vits16_imagenet_100pct,0.904349,0.89215,0.012199,-0.0133875,0.0422864,0.29757,0.439956,inconclusive,binary,19,10,10000

@@ -1,0 +1,17 @@
+# LIMUC within-dataset replication (run_all.py --limuc). Same models and training
+# defaults as the internal plan; more low-label fractions.
+
+subset_ratios: [0.01, 0.05, 0.10, 0.25, 0.50, 0.75, 1.00]
+head_types: ["linear"]
+seeds: [42, 84, 128, 256, 364, 420, 512, 1024, 2048, 4096]
+
+models:
+  - model: resnet50_imagenet
+  - model: resnet50_5M
+  - model: vits16_imagenet
+  - model: vits16_gastronet
+  - model: resnet50_200K
+  - model: resnet50_1M
+  - model: efficientnetb0
+  - model: vits14_dinov2
+  - model: vits16_dinov3

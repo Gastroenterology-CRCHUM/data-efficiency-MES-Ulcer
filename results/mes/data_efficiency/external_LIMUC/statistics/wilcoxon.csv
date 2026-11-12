@@ -1,0 +1,19 @@
+challenger,baseline,measure,mean Δ,median Δ,n_pos,n_seeds,p_exact,p_floor,p_adj,dataset,family
+resnet50_5M,resnet50_imagenet,ΔAULC,0.0508714,0.0506083,10,10,0.00195312,0.00195312,0.00390625,internal_to_limuc,matched
+vits16_gastronet,vits16_imagenet,ΔAULC,0.0411554,0.0378491,10,10,0.00195312,0.00195312,0.00390625,internal_to_limuc,matched
+resnet50_5M_100pct,resnet50_imagenet_100pct,ΔAUROC,0.0458972,0.0426239,10,10,0.00195312,0.00195312,0.00390625,internal_to_limuc,matched
+vits16_gastronet_100pct,vits16_imagenet_100pct,ΔAUROC,0.00689325,0.011567,7,10,0.322266,0.00195312,0.322266,internal_to_limuc,matched
+resnet50_1M,resnet50_200K,ΔAULC,0.000934477,0.00358214,7,10,0.625,0.00195312,1,internal_to_limuc,corpus_size
+resnet50_5M,resnet50_1M,ΔAULC,-0.00494456,-0.00221787,3,10,0.322266,0.00195312,0.966797,internal_to_limuc,corpus_size
+resnet50_5M,resnet50_200K,ΔAULC,-0.00401009,-0.00228202,5,10,0.556641,0.00195312,1,internal_to_limuc,corpus_size
+resnet50_1M_100pct,resnet50_200K_100pct,ΔAUROC,-0.0115685,-0.0106204,5,10,0.232422,0.00195312,0.386719,internal_to_limuc,corpus_size
+resnet50_5M_100pct,resnet50_1M_100pct,ΔAUROC,0.0236299,0.025724,9,10,0.0488281,0.00195312,0.146484,internal_to_limuc,corpus_size
+resnet50_5M_100pct,resnet50_200K_100pct,ΔAUROC,0.0120614,0.0188825,6,10,0.193359,0.00195312,0.386719,internal_to_limuc,corpus_size
+vits14_dinov2,vits16_gastronet,ΔAULC,-0.0247323,-0.0245071,1,10,0.00585938,0.00195312,0.0175781,internal_to_limuc,generic
+vits14_dinov2,vits16_imagenet,ΔAULC,0.0164231,0.0151124,8,10,0.0644531,0.00195312,0.128906,internal_to_limuc,generic
+vits16_dinov3,vits16_gastronet,ΔAULC,-0.00872471,-0.011757,3,10,0.130859,0.00195312,0.130859,internal_to_limuc,generic
+vits16_dinov3,vits16_imagenet,ΔAULC,0.0324307,0.0338305,9,10,0.00390625,0.00195312,0.015625,internal_to_limuc,generic
+vits14_dinov2_100pct,vits16_gastronet_100pct,ΔAUROC,-0.0297955,-0.0230492,2,10,0.00976562,0.00195312,0.0292969,internal_to_limuc,generic
+vits14_dinov2_100pct,vits16_imagenet_100pct,ΔAUROC,-0.0229023,-0.0203063,1,10,0.00585938,0.00195312,0.0234375,internal_to_limuc,generic
+vits16_dinov3_100pct,vits16_gastronet_100pct,ΔAUROC,-0.00995456,-0.0156807,2,10,0.232422,0.00195312,0.464844,internal_to_limuc,generic
+vits16_dinov3_100pct,vits16_imagenet_100pct,ΔAUROC,-0.00306131,-0.0032367,5,10,0.322266,0.00195312,0.464844,internal_to_limuc,generic

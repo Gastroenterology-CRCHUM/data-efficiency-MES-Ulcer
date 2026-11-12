@@ -1,0 +1,19 @@
+challenger,baseline,measure,mean Δ,median Δ,n_pos,n_seeds,p_exact,p_floor,p_adj,dataset,family
+resnet50_5M,resnet50_imagenet,ΔAULC,0.0229253,0.0224163,8,10,0.0644531,0.00195312,0.0644531,mes,matched
+vits16_gastronet,vits16_imagenet,ΔAULC,0.0243195,0.0310114,8,10,0.00976562,0.00195312,0.0195312,mes,matched
+resnet50_5M_100pct,resnet50_imagenet_100pct,ΔAUROC,-0.0119916,-0.0211418,3,10,0.160156,0.00195312,0.160156,mes,matched
+vits16_gastronet_100pct,vits16_imagenet_100pct,ΔAUROC,0.0405913,0.041001,10,10,0.00195312,0.00195312,0.00390625,mes,matched
+resnet50_1M,resnet50_200K,ΔAULC,0.0201285,0.0131119,8,10,0.0488281,0.00195312,0.0976562,mes,corpus_size
+resnet50_5M,resnet50_1M,ΔAULC,0.00828628,0.0098248,7,10,0.160156,0.00195312,0.160156,mes,corpus_size
+resnet50_5M,resnet50_200K,ΔAULC,0.0284147,0.0307568,9,10,0.00976562,0.00195312,0.0292969,mes,corpus_size
+resnet50_1M_100pct,resnet50_200K_100pct,ΔAUROC,-0.00121691,-0.00298034,4,10,0.769531,0.00195312,1,mes,corpus_size
+resnet50_5M_100pct,resnet50_1M_100pct,ΔAUROC,0.00841367,0.00131804,5,10,0.431641,0.00195312,1,mes,corpus_size
+resnet50_5M_100pct,resnet50_200K_100pct,ΔAUROC,0.00719676,0.00351812,5,10,0.556641,0.00195312,1,mes,corpus_size
+vits14_dinov2,vits16_gastronet,ΔAULC,0.00121371,0.000354328,5,10,0.921875,0.00195312,0.921875,mes,generic
+vits14_dinov2,vits16_imagenet,ΔAULC,0.0255332,0.0257078,10,10,0.00195312,0.00195312,0.0078125,mes,generic
+vits16_dinov3,vits16_gastronet,ΔAULC,0.00745498,0.00579507,8,10,0.275391,0.00195312,0.550781,mes,generic
+vits16_dinov3,vits16_imagenet,ΔAULC,0.0317745,0.0314955,9,10,0.00976562,0.00195312,0.0292969,mes,generic
+vits14_dinov2_100pct,vits16_gastronet_100pct,ΔAUROC,-0.0112312,-0.011739,3,10,0.0839844,0.00195312,0.0839844,mes,generic
+vits14_dinov2_100pct,vits16_imagenet_100pct,ΔAUROC,0.0293601,0.0319669,10,10,0.00195312,0.00195312,0.0078125,mes,generic
+vits16_dinov3_100pct,vits16_gastronet_100pct,ΔAUROC,-0.0229574,-0.02257,2,10,0.00976562,0.00195312,0.0195312,mes,generic
+vits16_dinov3_100pct,vits16_imagenet_100pct,ΔAUROC,0.0176339,0.0174988,10,10,0.00195312,0.00195312,0.0078125,mes,generic

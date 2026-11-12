@@ -1,0 +1,242 @@
+{
+  "task": "ulcer_detection",
+  "status": "completed",
+  "created": "2026-11-04T11:50:52",
+  "git_sha": "d305a8b571b34aedef1871d9d3f601309c3d78fd-dirty",
+  "manifest": "data/ulcer/splits/dataset_manifest.csv",
+  "data_dir": "data/ulcer/processed",
+  "results_dir": "results/ulcer/data_efficiency_vitb",
+  "models_dir": "output/ulcer/models_vitb",
+  "num_classes": 1,
+  "plan": {
+    "path": "configs/experiments/data_efficiency_vitb.yaml",
+    "run_specs": [
+      {
+        "model": "vitb14_gastronet"
+      },
+      {
+        "model": "vitb14_dinov2"
+      },
+      {
+        "model": "vitb16_dinov3"
+      }
+    ],
+    "subset_ratios": [
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "seeds": [
+      42,
+      84,
+      128,
+      256,
+      364,
+      420,
+      512,
+      1024,
+      2048,
+      4096
+    ],
+    "head_types": [
+      "linear"
+    ],
+    "head_lr_scales": {
+      "linear": 1.0,
+      "mlp1": 1.0,
+      "mlp2": 1.0
+    }
+  },
+  "config": "configs/base.yaml",
+  "partial_run_reasons": [
+    "non-default --plan configs/experiments/data_efficiency_vitb.yaml"
+  ],
+  "models": [
+    "vitb14_gastronet",
+    "vitb14_dinov2",
+    "vitb16_dinov3"
+  ],
+  "subset_ratios": [
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "seeds": [
+    42,
+    84,
+    128,
+    256,
+    364,
+    420,
+    512,
+    1024,
+    2048,
+    4096
+  ],
+  "head_types": [
+    "linear"
+  ],
+  "head_lr_scales": {
+    "linear": 1.0,
+    "mlp1": 1.0,
+    "mlp2": 1.0
+  },
+  "deterministic": true,
+  "n_runs_planned": 150,
+  "n_runs_resumed": 16,
+  "split_summary": {
+    "n_patients": {
+      "train": 18,
+      "val": 9,
+      "test": 19
+    },
+    "n_clips": {
+      "train": 87,
+      "val": 32,
+      "test": 87
+    },
+    "n_frames": {
+      "train": 2736,
+      "val": 976,
+      "test": 2526
+    },
+    "patient_fraction": {
+      "train": 0.391304347826087,
+      "val": 0.1956521739130435,
+      "test": 0.41304347826086957
+    },
+    "frame_fraction": {
+      "train": 0.43860211606284066,
+      "val": 0.1564604039756332,
+      "test": 0.4049374799615261
+    },
+    "per_class": {
+      "0": {
+        "train": {
+          "patients": 15,
+          "clips": 45,
+          "frames": 1596
+        },
+        "val": {
+          "patients": 7,
+          "clips": 16,
+          "frames": 599
+        },
+        "test": {
+          "patients": 17,
+          "clips": 46,
+          "frames": 1592
+        }
+      },
+      "1": {
+        "train": {
+          "patients": 17,
+          "clips": 42,
+          "frames": 1140
+        },
+        "val": {
+          "patients": 8,
+          "clips": 16,
+          "frames": 377
+        },
+        "test": {
+          "patients": 17,
+          "clips": 41,
+          "frames": 934
+        }
+      }
+    },
+    "n_patients_in_multiple_splits": 0,
+    "warnings": []
+  },
+  "base_config": {
+    "model": {
+      "model": "resnet50_5M",
+      "num_classes": 1,
+      "freeze_layers": 0,
+      "threshold": 0.5,
+      "dropout_rate": 0.5,
+      "drop_path_rate": 0.1,
+      "head_type": "linear"
+    },
+    "training": {
+      "subset_ratio": 1.0,
+      "random_seed": 42,
+      "deterministic": true,
+      "batch_size": 32,
+      "epochs": 100,
+      "learning_rate": 1e-05,
+      "layer_decay": 0.75,
+      "optimizer": "Adam",
+      "weight_decay": 0.001,
+      "label_smoothing": 0.0,
+      "class_weights": null,
+      "active_loss_weight": 1.0,
+      "es_patience": 20,
+      "es_start_epoch": 10,
+      "grad_clip_norm": 10.0,
+      "equalize": true,
+      "num_workers": 8,
+      "device_id": 0,
+      "use_amp": true,
+      "warmup_epochs": 10,
+      "min_lr": 1e-07,
+      "use_randaugment": false,
+      "randaugment_m": 9,
+      "use_random_erasing": false,
+      "random_erasing_p": 0.25
+    },
+    "evaluation": {
+      "bootstrap_samples": 1000,
+      "confidence_interval": 95
+    },
+    "paths": {
+      "mes": {
+        "root": "data/mes"
+      },
+      "ulcer": {
+        "root": "data/ulcer"
+      },
+      "pretrained_dir": "data/assets/pretrained",
+      "output_ulcer_dir": "output/ulcer",
+      "output_mes_dir": "output/mes",
+      "ulcer_models_dir": "output/ulcer/models",
+      "mes_models_dir": "output/mes/models",
+      "results_ulcer_dir": "results/ulcer",
+      "results_mes_dir": "results/mes",
+      "results_ulcer_data_efficiency_dir": "results/ulcer/data_efficiency",
+      "results_mes_data_efficiency_dir": "results/mes/data_efficiency"
+    }
+  },
+  "versions": {
+    "python": "3.10.20",
+    "torch": "2.14.0+cu132",
+    "cuda": "13.2",
+    "cudnn": 92400,
+    "torchvision": "0.29.0+cu132",
+    "timm": "1.0.29",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "sklearn": "1.7.2"
+  },
+  "device": "NVIDIA RTX PRO 5000 Blackwell",
+  "metrics": {
+    "f1": "frame-level F1 at the fixed threshold model.threshold (0.5)",
+    "auroc": "frame-level AUROC",
+    "clip_*": "clip level (mean probability, threshold 0.5); NaN without clip ids",
+    "tuned_*": "test metrics at the threshold maximising val F1 (per run; tuned_mcc = MCC)",
+    "val_auroc": "best validation AUROC reached by fit() (checkpoint criterion)",
+    "best_seed": "results.csv: seed with the highest val_auroc (never test)",
+    "estimates": "point estimates on the full test set; CIs are not stored here"
+  },
+  "finished": "2026-11-05T06:59:03",
+  "n_runs": 150,
+  "n_failed": 0,
+  "n_interrupted": 0,
+  "n_not_run": 0,
+  "failed_runs": []
+}

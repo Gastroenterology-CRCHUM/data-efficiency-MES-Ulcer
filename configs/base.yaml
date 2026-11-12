@@ -1,0 +1,65 @@
+# Base config of the runners (default --config): edit values here. Plan entries
+# (configs/experiments/*.yaml) and CLI flags override them; missing keys fall back to
+# src/config, unknown keys raise. Paths are relative to the repository root.
+
+model:
+  model: resnet50_5M         # set per run by the plan
+  num_classes: 1             # set per run by the runner (1 = binary BCE, 2+ = CE)
+  freeze_layers: 0           # -1 = linear probe; 0 = full fine-tune; N = freeze first N groups
+  threshold: 0.5             # binary decision threshold (ignored for multiclass)
+  dropout_rate: 0.5          # dropout before the classification head
+  drop_path_rate: 0.1        # ViT only: stochastic depth, rising over the blocks to this rate
+  head_type: linear          # set per run by the plan's head_types
+
+training:                    # GastroNet-5M fine-tuning protocol, AMP on
+  subset_ratio: 1.0          # set per run by the plan
+  random_seed: 42            # set per run by the plan
+  deterministic: true
+
+  batch_size: 32
+  epochs: 100
+  learning_rate: 1.0e-5
+  layer_decay: 0.75          # ViT only: LR x 0.75 per block below the last one; 1 = off
+  optimizer: Adam            # Adam | AdamW
+  weight_decay: 1.0e-3
+  label_smoothing: 0.0
+
+  class_weights: null        # null = balanced from the training subset
+  active_loss_weight: 1.0    # MES: + weight x CE of active (Mayo 2-3) vs remission; 0 = off
+
+  es_patience: 20            # epochs without val-AUROC improvement
+  es_start_epoch: 10          # patience counts only the epochs after this one
+  grad_clip_norm: 10.0
+
+  warmup_epochs: 10          # linear warm-up, then cosine
+  min_lr: 1.0e-7
+
+  equalize: true             # CLAHE on the luminance channel
+
+  use_randaugment: false
+  randaugment_m: 9
+  use_random_erasing: false
+  random_erasing_p: 0.25
+
+  num_workers: 8
+  device_id: 0               # < 0 = CPU
+  use_amp: true
+
+evaluation:
+  bootstrap_samples: 1000
+  confidence_interval: 95
+
+paths:
+  mes:
+    root: data/mes           # processed/ and splits/
+  ulcer:
+    root: data/ulcer
+  pretrained_dir: data/assets/pretrained
+  output_ulcer_dir: output/ulcer
+  output_mes_dir: output/mes
+  ulcer_models_dir: output/ulcer/models
+  mes_models_dir: output/mes/models
+  results_ulcer_dir: results/ulcer
+  results_mes_dir: results/mes
+  results_ulcer_data_efficiency_dir: results/ulcer/data_efficiency
+  results_mes_data_efficiency_dir: results/mes/data_efficiency

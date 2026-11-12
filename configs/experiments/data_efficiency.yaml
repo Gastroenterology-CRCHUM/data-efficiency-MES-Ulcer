@@ -1,0 +1,23 @@
+# Data-efficiency plan for scripts/{ulcer,mes}/run_data_efficiency.py (default --plan).
+# One run = model x head_type x subset ratio x seed. Every model uses the training
+# defaults (configs/base.yaml: GastroNet-5M protocol, same learning rate for all).
+# Allowed keys: subset_ratios, seeds, head_types, head_lr_scales, models.
+
+subset_ratios: [0.10, 0.25, 0.50, 0.75, 1.00]
+head_types: ["linear"]
+seeds: [42, 84, 128, 256, 364, 420, 512, 1024, 2048, 4096]
+
+models:
+  # DINOv1, matched pairs (primary)
+  - model: resnet50_imagenet
+  - model: resnet50_5M
+  - model: vits16_imagenet
+  - model: vits16_gastronet
+  # GastroNet corpus size (supplement)
+  - model: resnet50_200K
+  - model: resnet50_1M
+  # Supervised ImageNet reference
+  - model: efficientnetb0
+  # Generic DINOv2 / DINOv3
+  - model: vits14_dinov2
+  - model: vits16_dinov3

@@ -1,0 +1,4 @@
+dataset,architecture,reference,reference_auroc,model,fraction_needed [95% CI],fraction_eq,label_saving,interval_spans_range,aulc,aulc_lo,aulc_hi,estimator
+ulcer_vitb,ViT-B,vitb14_dinov2_100pct,0.952476,vitb14_dinov2,reference,1,1,False,0.895462,0.81478,0.954873,"per-seed interpolation, median over seeds"
+ulcer_vitb,ViT-B,vitb14_dinov2_100pct,0.952476,vitb14_gastronet,"32% [<10%, >100%]",0.323964,3.08676,True,0.947622,0.899483,0.977835,"per-seed interpolation, median over seeds"
+ulcer_vitb,ViT-B,vitb14_dinov2_100pct,0.952476,vitb16_dinov3,">100% [>100%, >100%]",,,False,0.86127,0.766399,0.930776,"per-seed interpolation, median over seeds"

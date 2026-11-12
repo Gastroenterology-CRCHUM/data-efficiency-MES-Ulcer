@@ -1,0 +1,12 @@
+# Exploratory ViT-Base plan for LIMUC (run_all.py --limuc --vitb / --vitb-only), in its own folder
+# (results/mes/data_efficiency_LIMUC_vitb). Same fractions, seeds and training defaults as
+# data_efficiency_limuc.yaml; these models train at 336 px (registry).
+
+subset_ratios: [0.01, 0.05, 0.10, 0.25, 0.50, 0.75, 1.00]
+head_types: ["linear"]
+seeds: [42, 84, 128, 256, 364, 420, 512, 1024, 2048, 4096]
+
+models:
+  - model: vitb14_gastronet
+  - model: vitb14_dinov2
+  - model: vitb16_dinov3

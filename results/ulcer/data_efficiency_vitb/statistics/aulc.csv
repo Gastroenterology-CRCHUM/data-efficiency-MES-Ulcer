@@ -1,0 +1,4 @@
+dataset,family,challenger,baseline,AULC challenger,AULC baseline,ΔAULC,ci_lo,ci_hi,p_sup,p_sup_adj,verdict,endpoint,n_patients,n_seeds,n_boot_valid
+ulcer_vitb,vitb_matched,vitb14_gastronet,vitb14_dinov2,0.947622,0.895462,0.0521599,0.0127898,0.105644,0.00579942,0.00579942,better,binary,19,10,10000
+ulcer_vitb,vitb_generic,vitb16_dinov3,vitb14_gastronet,0.86127,0.947622,-0.0863523,-0.147893,-0.0383479,0.00019998,0.00039996,worse,binary,19,10,10000
+ulcer_vitb,vitb_generic,vitb16_dinov3,vitb14_dinov2,0.86127,0.895462,-0.0341923,-0.0604314,-0.0138587,0.00119988,0.00119988,worse,binary,19,10,10000

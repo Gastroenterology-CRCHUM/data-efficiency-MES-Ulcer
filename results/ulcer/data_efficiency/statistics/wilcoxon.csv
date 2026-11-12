@@ -1,0 +1,19 @@
+challenger,baseline,measure,mean Δ,median Δ,n_pos,n_seeds,p_exact,p_floor,p_adj,dataset,family
+resnet50_5M,resnet50_imagenet,ΔAULC,0.134292,0.126903,10,10,0.00195312,0.00195312,0.00390625,ulcer,matched
+vits16_gastronet,vits16_imagenet,ΔAULC,0.0684191,0.0685921,10,10,0.00195312,0.00195312,0.00390625,ulcer,matched
+resnet50_5M_100pct,resnet50_imagenet_100pct,ΔAUROC,0.134558,0.134216,10,10,0.00195312,0.00195312,0.00390625,ulcer,matched
+vits16_gastronet_100pct,vits16_imagenet_100pct,ΔAUROC,0.0632813,0.0609527,10,10,0.00195312,0.00195312,0.00390625,ulcer,matched
+resnet50_1M,resnet50_200K,ΔAULC,0.0146789,0.0187768,9,10,0.00585938,0.00195312,0.0175781,ulcer,corpus_size
+resnet50_5M,resnet50_1M,ΔAULC,0.00151936,0.00479592,7,10,0.625,0.00195312,0.625,ulcer,corpus_size
+resnet50_5M,resnet50_200K,ΔAULC,0.0161983,0.0163794,9,10,0.00976562,0.00195312,0.0195312,ulcer,corpus_size
+resnet50_1M_100pct,resnet50_200K_100pct,ΔAUROC,0.021149,0.0218613,10,10,0.00195312,0.00195312,0.00585938,ulcer,corpus_size
+resnet50_5M_100pct,resnet50_1M_100pct,ΔAUROC,-0.00780868,-0.00906567,2,10,0.0644531,0.00195312,0.0644531,ulcer,corpus_size
+resnet50_5M_100pct,resnet50_200K_100pct,ΔAUROC,0.0133403,0.0140351,10,10,0.00195312,0.00195312,0.00585938,ulcer,corpus_size
+vits14_dinov2,vits16_gastronet,ΔAULC,-0.0262176,-0.0360892,2,10,0.0136719,0.00195312,0.0273438,ulcer,generic
+vits14_dinov2,vits16_imagenet,ΔAULC,0.0422015,0.0451836,10,10,0.00195312,0.00195312,0.0078125,ulcer,generic
+vits16_dinov3,vits16_gastronet,ΔAULC,-0.0605227,-0.0514138,0,10,0.00195312,0.00195312,0.0078125,ulcer,generic
+vits16_dinov3,vits16_imagenet,ΔAULC,0.0078964,0.00719485,6,10,0.275391,0.00195312,0.275391,ulcer,generic
+vits14_dinov2_100pct,vits16_gastronet_100pct,ΔAUROC,-0.0277266,-0.0267555,0,10,0.00195312,0.00195312,0.0078125,ulcer,generic
+vits14_dinov2_100pct,vits16_imagenet_100pct,ΔAUROC,0.0355547,0.035114,10,10,0.00195312,0.00195312,0.0078125,ulcer,generic
+vits16_dinov3_100pct,vits16_gastronet_100pct,ΔAUROC,-0.0510824,-0.0521328,0,10,0.00195312,0.00195312,0.0078125,ulcer,generic
+vits16_dinov3_100pct,vits16_imagenet_100pct,ΔAUROC,0.012199,0.00953039,5,10,0.232422,0.00195312,0.232422,ulcer,generic

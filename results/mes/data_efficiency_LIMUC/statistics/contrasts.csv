@@ -1,0 +1,10 @@
+dataset,family,challenger,baseline,AUROC challenger,AUROC baseline,ΔAUROC,ci_lo,ci_hi,p_sup,p_sup_adj,verdict,endpoint,n_patients,n_seeds,n_boot_valid
+limuc,matched,resnet50_5M_100pct,resnet50_imagenet_100pct,0.982159,0.979479,0.00267963,-0.000737726,0.0069081,0.128787,0.257574,inconclusive,active,85,10,10000
+limuc,matched,vits16_gastronet_100pct,vits16_imagenet_100pct,0.983158,0.981356,0.00180237,-0.00134032,0.00569422,0.271773,0.271773,inconclusive,active,85,10,10000
+limuc,corpus_size,resnet50_1M_100pct,resnet50_200K_100pct,0.980036,0.98044,-0.00040349,-0.00303246,0.00202985,0.770723,0.847115,inconclusive,active,85,10,10000
+limuc,corpus_size,resnet50_5M_100pct,resnet50_1M_100pct,0.982159,0.980036,0.00212256,-0.00143843,0.00651409,0.282372,0.847115,inconclusive,active,85,10,10000
+limuc,corpus_size,resnet50_5M_100pct,resnet50_200K_100pct,0.982159,0.98044,0.00171907,-0.00132232,0.00521962,0.283972,0.847115,inconclusive,active,85,10,10000
+limuc,generic,vits14_dinov2_100pct,vits16_gastronet_100pct,0.984228,0.983158,0.00106991,-0.00251211,0.00433994,0.555944,1,inconclusive,active,85,10,10000
+limuc,generic,vits14_dinov2_100pct,vits16_imagenet_100pct,0.984228,0.981356,0.00287229,6.57126e-05,0.00616441,0.0437956,0.175182,inconclusive,active,85,10,10000
+limuc,generic,vits16_dinov3_100pct,vits16_gastronet_100pct,0.983199,0.983158,4.02884e-05,-0.00465825,0.00435998,0.992501,1,inconclusive,active,85,10,10000
+limuc,generic,vits16_dinov3_100pct,vits16_imagenet_100pct,0.983199,0.981356,0.00184266,-0.00152679,0.00533472,0.269173,0.807519,inconclusive,active,85,10,10000
